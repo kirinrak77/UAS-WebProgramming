@@ -1,0 +1,24 @@
+
+// membuat tabel mahasiswa
+CREATE TABLE `multiuser`.`mahasiswa` (`NIM` INT(11) NOT NULL , `password` VARCHAR(8) NOT NULL , `nama_Mahasiswa` VARCHAR(35) NOT NULL , `NoTelpon` VARCHAR(12) NOT NULL , `Email` VARCHAR(50) NOT NULL , PRIMARY KEY (`NIM`)) ENGINE = InnoDB;
+
+// membuat tabel admin
+CREATE TABLE `multiuser`.`admin` (`Id_admin` INT(11) NOT NULL , `password` VARCHAR(8) NOT NULL , `nama_admin` VARCHAR(35) NOT NULL , `NoTelpon` VARCHAR(12) NOT NULL , `Email` VARCHAR(50) NOT NULL , PRIMARY KEY (`Id_admin`)) ENGINE = InnoDB;
+
+// membuat tabel dosen
+CREATE TABLE `multiuser`.`dosen` (`NIDN` INT(11) NOT NULL , `password` VARCHAR(8) NOT NULL , `nama_dosen` VARCHAR(35) NOT NULL , `NoTelpon` VARCHAR(12) NOT NULL , `Email` VARCHAR(50) NOT NULL , PRIMARY KEY (`NIDN`)) ENGINE = InnoDB;
+
+// membuat tabel skripsi
+CREATE TABLE `multiuser`.`skripsi` (`judul` VARCHAR(100) NOT NULL , `topik` VARCHAR(100) NOT NULL , `NIM` INT(11) NOT NULL , `dospem1` VARCHAR(35) NOT NULL , `dospem2` VARCHAR(35) NOT NULL , `idSkripsi` INT(12) NOT NULL , PRIMARY KEY (`idSkripsi`)) ENGINE = InnoDB;
+
+// membuat tabel jadwal
+CREATE TABLE `multiuser`.`jadwal` (`idJadwal` INT(11) NOT NULL , `NIM` INT(11) NOT NULL , `dospen1` VARCHAR(35) NOT NULL , `dospen2` VARCHAR(35) NOT NULL , `dospen3` VARCHAR(35) NOT NULL , `tanggal` DATE NOT NULL , `jam` TIME NOT NULL , `ruang` VARCHAR(20) NOT NULL , PRIMARY KEY (`idJadwal`)) ENGINE = InnoDB;
+
+// input admin
+INSERT INTO `admin` (`Id_admin`, `password`, `nama_admin`, `NoTelpon`, `Email`) VALUES ('5501', '123456', 'Jajang Mulyono S.Kom.', '085145645655', 'jajangmulyono@gmail.com')
+
+// input mahasiswa
+INSERT INTO `mahasiswa` (`NIM`, `password`, `nama_Mahasiswa`, `NoTelpon`, `Email`) VALUES ('2055', '1234', 'Muhammad Dzulkarnain', '088845645644', 'Dzulkarnain12@gmail.com')
+
+// input dosen 
+INSERT INTO `dosen` (`NIDN`, `password`, `nama_dosen`, `NoTelpon`, `Email`) VALUES ('7501', '12345678', 'Budi Setyo S.kom., M.Kom.', '081245644565', 'Budisetyo@gmail.com')
